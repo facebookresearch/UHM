@@ -1,7 +1,7 @@
 # Authentic Hand Avatar from a Phone Scan via Universal Hand Model
 
 ## Introduction
-This repo is official PyTorch implementation of [**Authentic Hand Avatar from a Phone Scan via Universal Hand Model (CVPR 2024)**]().
+This repo is official PyTorch implementation of [**Authentic Hand Avatar from a Phone Scan via Universal Hand Model (CVPR 2024)**](https://arxiv.org/abs/2405.07933).
 * Our Universal Hand Model (UHM) is a high-fidelity 3D hand model that can universally represent 3D hand surface of any identities. It takes 3D pose and ID latent code and outputs 3D hand surface with 3D hand keypoints. 
 * Using it, we create authentic hand avatars from a short (around 15 seconds) phone scans, animatable with novel poses.
 
