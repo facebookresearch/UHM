@@ -52,7 +52,7 @@ ${ROOT}
 |   |   |   |-- subject_1
 ```
 * `Ours` dataset has our new phone scans from four different subjects. This will be available from [here](https://codec-avatars.github.io/cvpr24/) soon.
-* `HARP` dataset can be downloaded from [here](https://github.com/korrawe/harp#preprocessed-sequence). Download 2D keypoints of Mediapipe from [here](https://drive.google.com/drive/folders/1V80NRbVerCFm7o20SDDt5fFvy-QSbctY?usp=sharing). Unzip it and place `keypoints_from_mediapipe` folder at `subject_1/1/keypoints_from_mediapipe`, for example.
+* `HARP` dataset can be downloaded from [here](https://github.com/korrawe/harp#preprocessed-sequence). Download 2D keypoints of Mediapipe from [here](https://1drv.ms/f/s!All7gdNh7XE5lWv_bv6pXD3adDz7?e=wll259). Unzip it and place `keypoints_from_mediapipe` folder at `subject_1/1/keypoints_from_mediapipe`, for example.
 
 ### Data (Your own phone scans)
 
