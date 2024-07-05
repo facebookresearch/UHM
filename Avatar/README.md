@@ -41,17 +41,17 @@ You need to follow directory structure of the `data` as below.
 ```
 ${ROOT}
 |-- data
-|   |-- Ours
+|   |-- Goliath
 |   |   |-- data
-|   |   |   |-- AXE977
-|   |   |   |-- QVC422
-|   |   |   |-- QZX685
-|   |   |   |-- XKT970
+|   |   |   |-- AXE977 (soft link to $GOLIATH_ROOT/m--20230306--0000--AXE977--pilot--ProjectGoliath--iPhone/Hands)
+|   |   |   |-- QVC422 (soft link to $GOLIATH_ROOT/m--20230714--0000--QVC422--pilot--ProjectGoliath--iPhone/Hands)
+|   |   |   |-- QZX685 (soft link to $GOLIATH_ROOT/m--20230317--0000--QZX685--pilot--ProjectGoliath--iPhone/Hands)
+|   |   |   |-- XKT970 (soft link to $GOLIATH_ROOT/m--20230524--0000--XKT970--pilot--ProjectGoliath--iPhone/Hands)
 |   |-- HARP
 |   |   |-- data
 |   |   |   |-- subject_1
 ```
-* `Ours` dataset has our new phone scans from four different subjects. This will be available from [here](https://codec-avatars.github.io/cvpr24/) soon.
+* `Goliath` dataset has our new phone scans from four different subjects. This is available in [here](https://github.com/facebookresearch/goliath#data).
 * `HARP` dataset can be downloaded from [here](https://github.com/korrawe/harp#preprocessed-sequence). Download 2D keypoints of Mediapipe from [here](https://1drv.ms/f/s!All7gdNh7XE5lWv_bv6pXD3adDz7?e=wll259). Unzip it and place `keypoints_from_mediapipe` folder at `subject_1/1/keypoints_from_mediapipe`, for example.
 
 ### Data (Your own phone scans)
@@ -110,7 +110,7 @@ High-resolution videos are available in [[1]](https://1drv.ms/v/s!All7gdNh7XE5o0
 * It will create a hand avatar for each ((`$SUBJECT_ID` in `subject_id_list`), (`dataset` in `main/config.py`)) pair.
 * After the training, for the evaluation purpose, the PoseNet and ShadowNet are fine-tuned on the test set (check [here](https://github.com/facebookresearch/UHM/blob/cd732a79f1b20e28a394a1d20aa392a150256fb8/Avatar/main/model.py#L35)) following previous works (e.g., HARP) like [this](https://github.com/korrawe/harp/blob/ea9d46505aa6d0b4a30066f55ddbe2c61e7e23b0/optimize_sequence.py#L263) and [this](https://github.com/korrawe/harp/blob/ea9d46505aa6d0b4a30066f55ddbe2c61e7e23b0/optimize_sequence.py#L307).
 * For `HARP` dataset, we use ['1', '2', '3', '4', '5'] for the training and ['6', '7', '8', '9'] for the testing (hard-coded in [here](https://github.com/facebookresearch/UHM/blob/cd732a79f1b20e28a394a1d20aa392a150256fb8/Avatar/data/HARP/HARP.py#L43)) following [this](https://github.com/korrawe/harp/blob/ea9d46505aa6d0b4a30066f55ddbe2c61e7e23b0/utils/data_util.py#L76).
-* For `Ours` dataset, we support 3D evaluation by running `python eval_3d.py --subject_id $SUBJECT_ID`.
+* For `Goliath` dataset, we support 3D evaluation by running `python eval_3d.py --subject_id $SUBJECT_ID`.
 * Checkpoints are saved to `output/model_dump/$SUBJECT_ID`.
 * Dumped results are saved to `output/result/$SUBJECT_ID`.
 * Evaluation results are saved to `main/eval_results/$SUBJECT_ID.json`.
@@ -136,8 +136,8 @@ High-resolution videos are available in [[1]](https://1drv.ms/v/s!All7gdNh7XE5o0
 ## Pre-trained avatars
 
 * There are two checkpoints for each avatar. First one is trained on the training set without fine-tuning PoseNet and ShadowNet on the test set. Second one is obtained by fine-tuning PoseNet and ShadowNet of the first checkpoint on the test set. The second one is used for the evaluation as described in . Let us denote the first and second one by `Before FT` and `After FT`, respectively.
-* `AXE977` subject of `Ours` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5oxIaZ5WXvZzd8q8e?e=OO0fBS) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxA91qoF3jnvx031?e=WYjlyj)
-* `QVC422` subject of `Ours` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5ow71ZZeDspsJ40zE?e=ync7x0) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5o0DZQiMaSBMPYDy1?e=yHwwBr)
-* `QZX685` subject of `Ours` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5ox7S3_FtXxLYVc1R?e=Cazb8q) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxxknn5Ek798D8dx?e=7Im9hl)
-* `XKT970` subject of `Ours` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5oxb41MY9upKJWny1?e=f8oHip) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxQzAbxrZDd3-nUD?e=vp6uNL)
+* `AXE977` subject of `Goliath` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5oxIaZ5WXvZzd8q8e?e=OO0fBS) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxA91qoF3jnvx031?e=WYjlyj)
+* `QVC422` subject of `Goliath` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5ow71ZZeDspsJ40zE?e=ync7x0) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5o0DZQiMaSBMPYDy1?e=yHwwBr)
+* `QZX685` subject of `Goliath` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5ox7S3_FtXxLYVc1R?e=Cazb8q) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxxknn5Ek798D8dx?e=7Im9hl)
+* `XKT970` subject of `Goliath` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5oxb41MY9upKJWny1?e=f8oHip) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxQzAbxrZDd3-nUD?e=vp6uNL)
 * `subject_1` subject of `HARP` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5oxqBugRaK-4eybQa?e=rObxUn) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxQzAbxrZDd3-nUD?e=3Tt4aA)

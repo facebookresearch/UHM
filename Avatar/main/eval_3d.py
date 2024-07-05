@@ -285,14 +285,14 @@ args = parse_args()
 cfg.set_args('test', args.subject_id, False)
 
 # load target keypoint
-joint_path = osp.join('..', 'data', 'Ours', 'data', subject_id, 'geo_3d_for_eval', '%06d.3d' % frame_idx)
+joint_path = osp.join('..', 'data', 'Goliath', 'data', subject_id, 'Right', 'geo_3d_for_eval', '%06d.3d' % frame_idx)
 joint_gt = load_joint(joint_path)
 joints_name_mugsy = ('Thumb_4', 'Thumb_3', 'Thumb_2', 'Thumb_1', 'Index_4', 'Index_3', 'Index_2', 'Index_1', 'Middle_4', 'Middle_3', 'Middle_2', 'Middle_1', 'Ring_4', 'Ring_3', 'Ring_2', 'Ring_1', 'Pinky_4', 'Pinky_3', 'Pinky_2', 'Pinky_1', 'Wrist')
 joint_gt = transform_joint_to_other_db(joint_gt, joints_name_mugsy, uhm.joints_name)
 joint_gt = torch.FloatTensor(joint_gt).cuda()[None,:,:] / 1000 # millimeter to meter
 
 # load taget recon
-recon_vert, recon_face = load_ply(osp.join('..', 'data', 'Ours', 'data', subject_id, 'geo_3d_for_eval', 'mesh%06d.ply' % frame_idx))
+recon_vert, recon_face = load_ply(osp.join('..', 'data', 'Goliath', 'data', subject_id, 'Right', 'geo_3d_for_eval', 'mesh%06d.ply' % frame_idx))
 recon_vert, recon_face = recon_vert.cuda()[None,:,:] / 1000, recon_face.cuda()[None,:,:] # millimeter to meter
 
 # get rigid alignment matrix for the initialization

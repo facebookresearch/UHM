@@ -10,7 +10,7 @@ import os.path as osp
 import torch
 
 subject_id_list = ['subject_1'] # HARP dataset
-#subject_id_list = ['AXE977', 'QVC422', 'QZX685', 'XKT970'] # Ours dataset
+#subject_id_list = ['AXE977', 'QVC422', 'QZX685', 'XKT970'] # Goliath dataset
 
 for subject_id in subject_id_list:
     
@@ -67,7 +67,7 @@ for subject_id in subject_id_list:
     print(cmd)
     os.system(cmd)
     
-    # only for the Ours dataset
+    # only for the Goliath dataset
     #cmd = 'python eval_3d.py --subject_id ' + subject_id
     #print(cmd)
     #os.system(cmd)

@@ -26,7 +26,7 @@ class Config:
     test_batch_size = 2
 
     ## others
-    dataset = 'HARP' # 'HARP', 'Ours', 'Custom'
+    dataset = 'HARP' # 'HARP', 'Goliath', 'Custom'
     num_thread = 16
     num_gpus = 1
     continue_train = False
