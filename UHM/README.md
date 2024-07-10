@@ -17,7 +17,7 @@ ${ROOT}
 |-- demo
 |   |-- demo.py
 ```
-* `ckpt.pth` contains pre-trained weights of UHM. [[Download]](https://1drv.ms/u/s!All7gdNh7XE5owyeKaE38erdioMH?e=sFpcZx)
+* `ckpt.pth` contains pre-trained weights of UHM. [[Download]](https://drive.google.com/file/d/1dFq5vPJWgonQjoXCel-z4Ipa9TDwy1eg/view?usp=sharing)
 * `template.obj` contains xyz and UV vertex coordinates with the triangle face.
 * `template.pkl` contains 3D poses of the `template.obj` and skinning weights for the LBS.
 * `uhm.py` contains functions and class for the UHM with a wrapper.
