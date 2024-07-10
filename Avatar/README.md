@@ -52,7 +52,7 @@ ${ROOT}
 |   |   |   |-- subject_1
 ```
 * `Goliath` dataset has our new phone scans from four different subjects. This is available in [here](https://github.com/facebookresearch/goliath#data).
-* `HARP` dataset can be downloaded from [here](https://github.com/korrawe/harp#preprocessed-sequence). Download 2D keypoints of Mediapipe from [here](https://1drv.ms/f/s!All7gdNh7XE5lWv_bv6pXD3adDz7?e=wll259). Unzip it and place `keypoints_from_mediapipe` folder at `subject_1/1/keypoints_from_mediapipe`, for example.
+* `HARP` dataset can be downloaded from [here](https://github.com/korrawe/harp#preprocessed-sequence). Download 2D keypoints of Mediapipe from [here](https://drive.google.com/drive/folders/1V80NRbVerCFm7o20SDDt5fFvy-QSbctY?usp=sharing). Unzip it and place `keypoints_from_mediapipe` folder at `subject_1/1/keypoints_from_mediapipe`, for example.
 
 ### Data (Your own phone scans)
 
@@ -78,7 +78,7 @@ ${ROOT}
 |   |   |   |-- ...
 ```
 * You can use your own phone scans, which consist of short (usually under 15 seconds) phone scans with simple hand poses.
-* Example data made with HARP dataset is available in [here](https://1drv.ms/u/s!All7gdNh7XE5owupOksbG4sHAkDt?e=rJw768).
+* Example data made with HARP dataset is available in [here](https://drive.google.com/file/d/1ec_l8hpbNrjEL6RBXn5n6QBhI74mFRli/view?usp=sharing).
 * `$SUBJECT_NAME` folder contains data from a single subject.
 * `frame_list_train.txt` and `frame_list_test.txt` contain sequence and frame indices for the training and testing, respectively.
 * Each of `$SEQ_IDX_1`, `$SEQ_IDX_2`, `$SEQ_IDX_3`, ... folder contains data from a single video. By preparing multiple `$SEQ_IDX` folders, you can use multiple videos for the training and testing.
@@ -101,7 +101,7 @@ ${ROOT}
 <img src="assets/recon_4.gif" width="400" height="200">
 </p>
 
-High-resolution videos are available in [[1]](https://1drv.ms/v/s!All7gdNh7XE5o0P3Z64tGNNPeYol?e=wh8rvd) [[2]](https://1drv.ms/v/s!All7gdNh7XE5ozjm25Lg4OrSFkoW?e=zEcCxX) [[3]](https://1drv.ms/v/s!All7gdNh7XE5oy_J0r00H1DAzzdZ?e=XjI3RI) [[4]](https://1drv.ms/v/s!All7gdNh7XE5oyzOFy8fs6AfDA6z?e=fQRGWK)
+High-resolution videos are available in [[1]](https://drive.google.com/file/d/1yJLY7yXRQKhVmJx-3rcg0xbgfwdY7Pvu/view?usp=sharing) [[2]](https://drive.google.com/file/d/1BgqFTHCttzjfmNo2bMzhjxqG2CHKrBZr/view?usp=sharing) [[3]](https://drive.google.com/file/d/1_rs5MyXdvkM0CrOfqEXQ-u-oKRb-XdIs/view?usp=sharing) [[4]](https://drive.google.com/file/d/1Pi0da6ioTtiiv0CSLZRfa4OF5kdv144X/view?usp=sharing)
 
 
 * Set `dataset` in `main/config.py`.
@@ -128,7 +128,7 @@ High-resolution videos are available in [[1]](https://1drv.ms/v/s!All7gdNh7XE5o0
 <img src="assets/drive_4.gif" width="400" height="200">
 </p>
 
-* Download poses from [here](https://1drv.ms/u/s!All7gdNh7XE5owdgwwCFPHCEIY9Q?e=4H1BjE) and unzip it at `main/driving_poses` folder.
+* Download poses from [here](https://drive.google.com/file/d/1KE0l43fCmkBOkDibOss152ZwqBiX8ZsG/view?usp=sharing) and unzip it at `main/driving_poses` folder.
 * Run `python drive.py --subject_id $SUBJECT_ID`.
 * The driven avatar is rendered to three viewpoints and saved to `main/drive_results/$SUBJECT_ID.mp4`. For the rendering, we only use albedo without shadow as our ShadowNet is trained only on small amount of viewpoints and poses.
 
@@ -136,8 +136,8 @@ High-resolution videos are available in [[1]](https://1drv.ms/v/s!All7gdNh7XE5o0
 ## Pre-trained avatars
 
 * There are two checkpoints for each avatar. First one is trained on the training set without fine-tuning PoseNet and ShadowNet on the test set. Second one is obtained by fine-tuning PoseNet and ShadowNet of the first checkpoint on the test set. The second one is used for the evaluation as described in . Let us denote the first and second one by `Before FT` and `After FT`, respectively.
-* `AXE977` subject of `Goliath` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5oxIaZ5WXvZzd8q8e?e=OO0fBS) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxA91qoF3jnvx031?e=WYjlyj)
-* `QVC422` subject of `Goliath` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5ow71ZZeDspsJ40zE?e=ync7x0) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5o0DZQiMaSBMPYDy1?e=yHwwBr)
-* `QZX685` subject of `Goliath` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5ox7S3_FtXxLYVc1R?e=Cazb8q) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxxknn5Ek798D8dx?e=7Im9hl)
-* `XKT970` subject of `Goliath` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5oxb41MY9upKJWny1?e=f8oHip) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxQzAbxrZDd3-nUD?e=vp6uNL)
-* `subject_1` subject of `HARP` dataset: [[Before FT]](https://1drv.ms/u/s!All7gdNh7XE5oxqBugRaK-4eybQa?e=rObxUn) [[After FT]](https://1drv.ms/u/s!All7gdNh7XE5oxQzAbxrZDd3-nUD?e=3Tt4aA)
+* `AXE977` subject of `Goliath` dataset: [[Before FT]](https://drive.google.com/drive/folders/1-CeC9ZnSyKy_WeVuv9S4YbvWrjq9lgKk?usp=sharing) [[After FT]](https://drive.google.com/drive/folders/13SJlzWMurWegZwa_miBbi7o4rV0nNj5L?usp=sharing)
+* `QVC422` subject of `Goliath` dataset: [[Before FT]](https://drive.google.com/drive/folders/1rcZLYITVHHhvyopMHuMmFlcp66P-GC_I?usp=sharing) [[After FT]](https://drive.google.com/drive/folders/1Qhzb2HkjumeygMrqIBnm9w-oZ6gj9f-A?usp=sharing)
+* `QZX685` subject of `Goliath` dataset: [[Before FT]](https://drive.google.com/drive/folders/1wykIEIGq7mPcRns1mK6qKjakd3VN86P4?usp=sharing) [[After FT]](https://drive.google.com/drive/folders/1sZYobWBi9Y-Xd5gOCiskH10FTRr6OCjR?usp=sharing)
+* `XKT970` subject of `Goliath` dataset: [[Before FT]](https://drive.google.com/drive/folders/1QZjM40BFpfSr33xOjiN4wxplXmd3IyOv?usp=sharing) [[After FT]](https://drive.google.com/drive/folders/1yNpbBH47eUL1exkFBytNUmnS_VJylWLh?usp=sharing)
+* `subject_1` subject of `HARP` dataset: [[Before FT]](https://drive.google.com/drive/folders/1iDSC5vagJRVC2p1NXDNSmCkUpADWmGE5?usp=sharing) [[After FT]](https://drive.google.com/drive/folders/1GcaTVYxjysRSYiiaE3_ul0p94ipazwj6?usp=sharing)
